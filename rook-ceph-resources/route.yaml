@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: rook-ceph-mgr-dashboard
+  namespace: openshift-storage
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  to:
+    kind: Service
+    name: rook-ceph-mgr-dashboard
+  port:
+    targetPort: 8443
+  tls:
+    termination: passthrough
+  wildcardPolicy: None

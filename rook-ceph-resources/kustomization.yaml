@@ -10,3 +10,4 @@ resources:
   - operator-openshift.yaml
   - cluster.yaml
   - block.yaml
+  - route.yaml
