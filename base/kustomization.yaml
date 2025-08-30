@@ -1,7 +1,15 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+
 resources:
-- namespace.yaml
-- operator-group.yaml
-- catalog-source.yaml
-- subscription.yaml
+- odf-resources
+- odf-catalogsource.yaml
+
+configurations:
+- kustomizeconfig.yaml
+
+# replace catalogsource image
+images:
+- name: catalog-img
+  newName: quay.io/thaobk541/odf-operator-catalog
+  newTag: v4.19
