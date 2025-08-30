@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: openshift-storage
 
 resources:
+  - cm.yaml
   - common.yaml
   - crds.yaml
   - operator-openshift.yaml
