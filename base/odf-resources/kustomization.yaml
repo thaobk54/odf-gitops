@@ -4,7 +4,19 @@ kind: Kustomization
 namespace: openshift-storage
 
 resources:
-  - storagesystem.yaml
-  - storagecluster.yaml
+- odf-namespace.yaml
+- odf-operatorgroup.yaml
+- odf-operator-subscription.yaml
 
+configurations:
+- kustomizeconfig.yaml
 
+# assign namespace name to NAMESPACE variable which will be used for substitution
+vars:
+- fieldref:
+    fieldPath: metadata.name
+  name: NAMESPACE
+  objref:
+    apiVersion: v1
+    kind: Namespace
+    name: openshift-storage
