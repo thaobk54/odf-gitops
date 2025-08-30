@@ -1,0 +1,9 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: noobaa-default-bucket-class
+provisioner: noobaa.io/obc
+parameters:
+  bucketclass: noobaa-default-bucket-class
+  # namespacePolicy tùy chỉnh nếu bạn định nghĩa BucketClass riêng
+reclaimPolicy: Delete
