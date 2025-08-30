@@ -1,11 +1,3 @@
-#################################################################################################################
-# Create the rook operator and necessary security context constraints for running
-# Rook in an OpenShift cluster.
-# For example, to create the rook-ceph cluster:
-#   oc create -f crds.yaml -f common.yaml -f operator-openshift.yaml
-#   oc create -f cluster.yaml
-#################################################################################################################
-# scc for the Rook and Ceph daemons
 kind: SecurityContextConstraints
 apiVersion: security.openshift.io/v1
 metadata:
@@ -44,11 +36,11 @@ users:
   # A user needs to be added for each rook service account.
   # This assumes running in the default sample "rook-ceph" namespace.
   # If other namespaces or service accounts are configured, they need to be updated here.
-  - system:serviceaccount:rook-ceph:rook-ceph-system # serviceaccount:namespace:operator
-  - system:serviceaccount:rook-ceph:rook-ceph-default # serviceaccount:namespace:cluster
-  - system:serviceaccount:rook-ceph:rook-ceph-mgr # serviceaccount:namespace:cluster
-  - system:serviceaccount:rook-ceph:rook-ceph-osd # serviceaccount:namespace:cluster
-  - system:serviceaccount:rook-ceph:rook-ceph-rgw # serviceaccount:namespace:cluster
+  - system:serviceaccount:openshift-storage:rook-ceph-system # serviceaccount:namespace:operator
+  - system:serviceaccount:openshift-storage:rook-ceph-default # serviceaccount:namespace:cluster
+  - system:serviceaccount:openshift-storage:rook-ceph-mgr # serviceaccount:namespace:cluster
+  - system:serviceaccount:openshift-storage:rook-ceph-osd # serviceaccount:namespace:cluster
+  - system:serviceaccount:openshift-storage:rook-ceph-rgw # serviceaccount:namespace:cluster
 ---
 # scc for the CSI driver
 kind: SecurityContextConstraints
@@ -91,19 +83,19 @@ users:
   # This assumes running in the default sample "rook-ceph" namespace.
   # If other namespaces or service accounts are configured, they need to be updated here.
   # Service accounts for the cephcsi driver (pre-cephcsi operator)
-  - system:serviceaccount:rook-ceph:rook-csi-rbd-plugin-sa # serviceaccount:namespace:operator
-  - system:serviceaccount:rook-ceph:rook-csi-rbd-provisioner-sa # serviceaccount:namespace:operator
-  - system:serviceaccount:rook-ceph:rook-csi-cephfs-plugin-sa # serviceaccount:namespace:operator
-  - system:serviceaccount:rook-ceph:rook-csi-cephfs-provisioner-sa # serviceaccount:namespace:operator
-  - system:serviceaccount:rook-ceph:rook-csi-nfs-plugin-sa # serviceaccount:namespace:operator
-  - system:serviceaccount:rook-ceph:rook-csi-nfs-provisioner-sa # serviceaccount:namespace:operator
+  - system:serviceaccount:openshift-storage:rook-csi-rbd-plugin-sa # serviceaccount:namespace:operator
+  - system:serviceaccount:openshift-storage:rook-csi-rbd-provisioner-sa # serviceaccount:namespace:operator
+  - system:serviceaccount:openshift-storage:rook-csi-cephfs-plugin-sa # serviceaccount:namespace:operator
+  - system:serviceaccount:openshift-storage:rook-csi-cephfs-provisioner-sa # serviceaccount:namespace:operator
+  - system:serviceaccount:openshift-storage:rook-csi-nfs-plugin-sa # serviceaccount:namespace:operator
+  - system:serviceaccount:openshift-storage:rook-csi-nfs-provisioner-sa # serviceaccount:namespace:operator
   # Service accounts for the csi operator
-  - system:serviceaccount:rook-ceph:ceph-csi-cephfs-ctrlplugin-sa # serviceaccount:namespace:operator
-  - system:serviceaccount:rook-ceph:ceph-csi-cephfs-nodeplugin-sa # serviceaccount:namespace:operator
-  - system:serviceaccount:rook-ceph:ceph-csi-nfs-ctrlplugin-sa # serviceaccount:namespace:operator
-  - system:serviceaccount:rook-ceph:ceph-csi-nfs-nodeplugin-sa # serviceaccount:namespace:operator
-  - system:serviceaccount:rook-ceph:ceph-csi-rbd-ctrlplugin-sa # serviceaccount:namespace:operator
-  - system:serviceaccount:rook-ceph:ceph-csi-rbd-nodeplugin-sa # serviceaccount:namespace:operator
+  - system:serviceaccount:openshift-storage:ceph-csi-cephfs-ctrlplugin-sa # serviceaccount:namespace:operator
+  - system:serviceaccount:openshift-storage:ceph-csi-cephfs-nodeplugin-sa # serviceaccount:namespace:operator
+  - system:serviceaccount:openshift-storage:ceph-csi-nfs-ctrlplugin-sa # serviceaccount:namespace:operator
+  - system:serviceaccount:openshift-storage:ceph-csi-nfs-nodeplugin-sa # serviceaccount:namespace:operator
+  - system:serviceaccount:openshift-storage:ceph-csi-rbd-ctrlplugin-sa # serviceaccount:namespace:operator
+  - system:serviceaccount:openshift-storage:ceph-csi-rbd-nodeplugin-sa # serviceaccount:namespace:operator
 ---
 # Rook Ceph Operator Config
 # Use this ConfigMap to override operator configurations
