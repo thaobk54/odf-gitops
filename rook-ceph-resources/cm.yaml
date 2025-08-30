@@ -15,7 +15,7 @@ data:
 
   # Allow using loop devices for osds in test clusters.
   ROOK_CEPH_ALLOW_LOOP_DEVICES: "false"
-
+  ROOK_CURRENT_NAMESPACE_ONLY: "true"
   # Enable CSI Operator
   ROOK_USE_CSI_OPERATOR: "true"
 
