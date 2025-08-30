@@ -9,7 +9,7 @@ resources:
   - odf-console-configmap.yaml
   - cert-manager-issuer.yaml
   - cert-manager-certificate.yaml
-  - odf-resources/kustomization.yaml
+  - odf-resources
 
 # Images: chỉnh sửa nếu cần (chỉ dùng nếu bạn muốn kustomize thay tag trong một số manifest)
 images:
