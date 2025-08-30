@@ -7,12 +7,4 @@ resources:
   - storagesystem.yaml
   - storagecluster.yaml
 
-vars:
-- fieldref:
-    fieldPath: metadata.name
-  name: NAMESPACE
-  objref:
-    apiVersion: v1
-    kind: Namespace
-    name: openshift-storage
 
