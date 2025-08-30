@@ -19,6 +19,7 @@ data:
   # Enable CSI Operator
   ROOK_USE_CSI_OPERATOR: "true"
 
+  CSI_CLUSTER_NAME: "ocs-storagecluster-cephcluster"
   # Enable the CSI driver.
   # To run the non-default version of the CSI driver, see the override-able image properties in operator.yaml
   ROOK_CSI_ENABLE_CEPHFS: "true"
