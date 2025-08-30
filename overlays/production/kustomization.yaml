@@ -1,14 +1,29 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+
 bases:
-- ../../base
+  - ../../base
+
 patchesJson6902:
-- target:
-    group: operators.coreos.com
-    version: v1alpha1
-    kind: Subscription
-    name: odf-operator-subscription
-  patch: |-
-    - op: replace
-      path: /spec/installPlanApproval
-      value: Manual
+  - target:
+      group: operators.coreos.com
+      version: v1alpha1
+      kind: Subscription
+      name: odf-operator
+    patch: |-
+      - op: replace
+        path: /spec/installPlanApproval
+        value: Manual
+
+  - target:
+      group: monitoring.coreos.com
+      version: v1
+      kind: ServiceMonitor
+      name: odf-operator-controller-manager-metrics-monitor
+    patch: |-
+      - op: remove
+        path: /spec/endpoints/0/bearerTokenFile
+      - op: add
+        path: /spec/endpoints/0/bearerTokenSecret
+        value:
+          name: odf-operator-controller-manager-token
