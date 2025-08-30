@@ -3,6 +3,8 @@ kind: CephCluster
 metadata:
   name: rook-ceph
   namespace: openshift-storage
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   cephVersion:
     allowUnsupported: false
