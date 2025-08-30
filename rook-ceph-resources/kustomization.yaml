@@ -7,5 +7,5 @@ resources:
   - cm.yaml
   - common.yaml
   - crds.yaml
-#  - operator-openshift.yaml
+  - operator-openshift.yaml
   - cluster.yaml
