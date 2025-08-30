@@ -12,4 +12,4 @@ configurations:
 images:
 - name: catalog-img
   newName: quay.io/thaobk541/odf-operator-catalog
-  newTag: v4.19
+  newTag: v4.19.1
