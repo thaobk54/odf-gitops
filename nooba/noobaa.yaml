@@ -5,5 +5,5 @@ metadata:
   namespace: openshift-storage
 spec:
   image: noobaa/noobaa-core:master-20250830
-  dbImage: postgres:15
+  dbImage: centos/mongodb-36-centos7
 
