@@ -4,7 +4,6 @@ metadata:
   name: noobaa
   namespace: openshift-storage
 spec:
-  coreResources:
-    image: noobaa/noobaa-core:master-20250830
-  dbResources:
-    image: centos/mongodb-36-centos7
+  image: noobaa/noobaa-core:master-20250830
+  dbImage: centos/mongodb-36-centos7
+
