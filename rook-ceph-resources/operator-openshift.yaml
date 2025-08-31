@@ -696,7 +696,13 @@ spec:
               name: default-config-dir
           env:
             - name: ROOK_CURRENT_NAMESPACE_ONLY
-              value: "false"
+              valueFrom:
+                configMapKeyRef:
+                  key: ROOK_CURRENT_NAMESPACE_ONLY
+                  name: ocs-operator-config
+
+#            - name: ROOK_CURRENT_NAMESPACE_ONLY
+#              value: "false"
 
             # Whether to start pods as privileged that mount a host path, which includes the Ceph mon, osd pods and csi provisioners(if logrotation is on).
             # Set this to true if SELinux is enabled (e.g. OpenShift) to workaround the anyuid issues.
