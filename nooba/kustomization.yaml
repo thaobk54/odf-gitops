@@ -4,5 +4,6 @@ kind: Kustomization
 namespace: openshift-storage
 
 resources:
+  - cnpg-default-monitoring.yaml
   - sc-object-noobaa.yaml
   - noobaa.yaml
