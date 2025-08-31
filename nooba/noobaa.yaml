@@ -4,6 +4,6 @@ metadata:
   name: noobaa
   namespace: openshift-storage
 spec:
-  image: noobaa/noobaa-core:master-20250830
-  dbImage: quay.io/sclorg/postgresql-15-c9s
+  image: noobaa/noobaa-core:master-20250521
+  dbImage: quay.io/sclorg/postgresql-16-c9s
 
