@@ -4,7 +4,8 @@ metadata:
   name: odf-operator
   namespace: openshift-storage
 spec:
-  channel: alpha
+  channel: stable-4.19
+#  channel: alpha
   installPlanApproval: Automatic
   name: odf-operator
   source: odf-catalogsource
