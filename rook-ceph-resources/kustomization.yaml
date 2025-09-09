@@ -6,7 +6,7 @@ namespace: openshift-storage
 resources:
   - cm.yaml
   - common.yaml
-#  - crds.yaml
+  - crds.yaml
   - operator-openshift.yaml
   - cluster.yaml
   - block.yaml
