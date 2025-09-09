@@ -5,6 +5,7 @@ namespace: openshift-storage
 
 resources:
 - odf-namespace.yaml
+- crds.yaml
 - odf-operatorgroup.yaml
 - odf-operator-subscription.yaml
 
