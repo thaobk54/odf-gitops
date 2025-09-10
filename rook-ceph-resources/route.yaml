@@ -10,7 +10,7 @@ spec:
     kind: Service
     name: rook-ceph-mgr-dashboard
   port:
-    targetPort: 8443
+    targetPort: 7000
   tls:
     termination: passthrough
   wildcardPolicy: None
