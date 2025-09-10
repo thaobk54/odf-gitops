@@ -6,6 +6,6 @@ namespace: openshift-storage
 resources:
   - cnpg-default-monitoring.yaml
   - sc-object-noobaa.yaml
-  - noobaa.io_noobaas.yaml
+  - noobaa.io_noobaas_crd.yaml
   - noobaa.io_v1alpha1_noobaa_cr.yaml
   #- noobaa.yaml
