@@ -1,0 +1,20 @@
+apiVersion: ceph.rook.io/v1
+kind: CephCluster
+metadata:
+  name: rook-ceph
+  namespace: openshift-storage
+spec:
+  cephVersion:
+    image: quay.io/ceph/ceph:v17.2.6
+  dataDirHostPath: /var/lib/rook
+  mon:
+    count: 3
+  dashboard:
+    enabled: true
+  network:
+    hostNetwork: false
+  rbdMirroring:
+    workers: 0
+  storage:
+    useAllNodes: true
+    useAllDevices: true
