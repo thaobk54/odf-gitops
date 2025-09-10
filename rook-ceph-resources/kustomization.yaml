@@ -12,4 +12,3 @@ resources:
 #  - block.yaml
 #  - route.yaml
   - clustertest.yaml
-  - route.yaml
