@@ -5,7 +5,7 @@ metadata:
   namespace: openshift-storage
 spec:
   cephVersion:
-    image: quay.io/ceph/ceph:v17.2.6
+    image: quay.io/ceph/ceph:v19.2.3
   dataDirHostPath: /var/lib/rook
   mon:
     count: 3
@@ -13,8 +13,6 @@ spec:
     enabled: true
   network:
     hostNetwork: false
-  rbdMirroring:
-    workers: 0
   storage:
     useAllNodes: true
     useAllDevices: true
