@@ -4,6 +4,8 @@ metadata:
   name: noobaa
   namespace: openshift-storage
 spec:
+  cleanupPolicy:
+    confirmation: delete
   image: noobaa/noobaa-core:master-20250521
   dbImage: quay.io/sclorg/postgresql-16-c9s
 
