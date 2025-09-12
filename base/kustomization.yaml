@@ -9,7 +9,7 @@ configurations:
 - kustomizeconfig.yaml
 
 # replace catalogsource image
-images:
-- name: catalog-img
-  newName: quay.io/okderators/catalog-index
-  newTag: 4.19
+#images:
+#- name: catalog-img
+#  newName: quay.io/okderators/catalog-index
+#  newTag: 4.19
